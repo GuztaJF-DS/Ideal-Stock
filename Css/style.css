@@ -118,6 +118,30 @@ h1,h2,h3,h4,h5,h6{
 	  	max-height:24vh;  
 		max-width:20%;
 	}
+	.Product{
+		background-color:#304b78;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 10%;
+		display:inline-block;
+		margin-right: 2%;
+		width:61.5vw;		
+	}
+	.Product .Product_Info{
+		color:white;
+		margin-left: 1vw;
+		margin-right: 1vw;
+		margin-bottom:3vh;
+		text-align: left;
+	}
+	.Product .Product_Buy{
+		color:white;
+		margin-left: 1vw;
+		margin-right: 1vw;
+		margin-bottom:3vh;
+		text-align: left;
+	}
+
 	.Footer{
 		position: sticky;
 		background-color:#2494a2;
