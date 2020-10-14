@@ -37,6 +37,24 @@ h1,h2,h3,h4,h5,h6{
 	background-color:#2494a2;
 	height:auto;
 }
+.qtn{
+	width:30%;
+}
+.Total{
+	width:30%;
+	margin-left:18.4%;
+}
+.Search_Input{
+	margin-left:21.5%;
+	width:50%;
+	height:3.5vh;
+}
+.Search_Button{	
+	height:5vh;
+}
+.Buy{
+	margin-left:40%;
+}
 
 /*Display For Phone*/
 @media only screen and (min-width: 0px) and (max-width: 767px) {
@@ -44,7 +62,10 @@ h1,h2,h3,h4,h5,h6{
 	  max-width:16vw;
 	  max-height:20vh; 	
 	}
-
+	.Item_Pic:hover .Text{
+  		opacity:1;
+  		visibility: visible;
+	}
 	.Display{
 		background-color:#304b78;
 		margin-top: 1%;
@@ -54,6 +75,27 @@ h1,h2,h3,h4,h5,h6{
 	  	height:auto;
 	  	text-align: center;
 	}
+	.Itens_Base_Search{
+		background-color:#304b78;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-right: 2%;
+		margin-left: 5%;
+		max-width:90%;
+		text-align: center;
+	}
+	.Itens_Base_Search .Item_Pic{
+		position: relative; 
+		display: inline-block;
+		background-color:#2494a2;
+		margin-top: 2%;
+		margin-bottom: 5px;
+		margin-right: 2vw;
+		margin-left: 1vw;
+		max-width:20vw;
+	  	max-height:24vh;  
+		max-width:20%;
+	}
 	.Itens_Base{
 		background-color:#304b78;
 		margin-top: 10px;
@@ -61,6 +103,7 @@ h1,h2,h3,h4,h5,h6{
 		margin-right: 2%;
 		margin-left: 10%;
 		max-width:80%;
+		text-align: center;
 	}
 
 	.Itens_Base .Item_Pic{
@@ -76,18 +119,21 @@ h1,h2,h3,h4,h5,h6{
 		max-width:20%;
 	}
 	.Footer{
+		position: sticky;
 		background-color:#2494a2;
 		margin-top:10%;
-		height:30vh;
+		height:24vh;
 	}
 }
 /*Display For Pc*/
+
 @media only screen and (min-width: 768px) {
 	.Responsive_pic {
 	  max-width: 10vw;
-	  height: auto;
-	  max-height:25vh; 	
+	  max-height:20vh; 
+      z-index:2;	
 	}
+
 	.Item_Pic:hover .Text{
   		opacity:1;
   		visibility: visible;
@@ -104,16 +150,17 @@ h1,h2,h3,h4,h5,h6{
 	  	height:auto;
 	  	text-align: center;
 	}
-	.Itens_Base{
-		float:right;
+
+	.Itens_Base_Search{
 		background-color:#304b78;
 		margin-top: 10px;
 		margin-bottom: 10px;
 		margin-right: 2%;
-		max-width:61%;
+		margin-left:11%;
+		max-width:79%;
+		text-align: center;
 	}
-
-	.Itens_Base .Item_Pic{
+	.Itens_Base_Search .Item_Pic{
 		position: relative; 
 		display: inline-block;
 		background-color:#2494a2;
@@ -121,12 +168,60 @@ h1,h2,h3,h4,h5,h6{
 		margin-bottom: 5px;
 		margin-right: 1vw;
 		margin-left: 1vw;
-		min-width:19%;
-		max-width:20%;
+		min-width:13%;
+		max-width:16%;
 	}
-	.Footer{
+	.Itens_Base{
+		float:right;
+		background-color:#304b78;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-right: 2%;
+		max-width:61%;
+		text-align: center;
+	}
+
+	.Itens_Base .Item_Pic{
+		position: relative; 
+		display: inline-table;
 		background-color:#2494a2;
-		margin-top:10%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 1vw;
+		margin-left: 1vw;
+		max-width:5vw;
+    	z-index:1;
+	}
+
+	.Product{
+		float:right;
+		background-color:#304b78;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		display:inline-block;
+		margin-right: 2%;
+		width:47vw;		
+	}
+	.Product .Product_Info{
+		color:white;
+		float:left;
+		margin-left: 1vw;
+		margin-right: 1vw;
+		margin-bottom:3vh;
+		text-align: left;
+	}
+	.Product .Product_Buy{
+		color:white;
+		float:right;
+		margin-right: 1vw;
+		margin-bottom:3vh;
+		text-align: left;
+	}
+
+	.Footer{
+		position: sticky;
+		background-color:#2494a2;
+		margin-top:20vh;
 		height:30vh;
 	}
 }
