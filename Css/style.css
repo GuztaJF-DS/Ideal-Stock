@@ -334,7 +334,21 @@
   margin-top: 2px;
 }
 
-#btn,
+#btn,#bntUp{
+  border-radius: 23px;
+  color: rgb(201, 233, 222);
+  font-family: 'Open Sans';
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+
+#btn:hover {
+  border: 2px solid white;
+  background-color: #304b78;
+}
+
+
 #btnUp:hover {
   border: 2px solid white;
   background-color: #304b78;
