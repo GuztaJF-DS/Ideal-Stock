@@ -21,7 +21,7 @@
         <div class="col-12 col-sm-6 col-md-3">
           <div class="Itens_base">
             <img src="./Image/logo.png" class="img" />
-            <form action="login.html" method="POST" class="form">
+            <form action="login.php" method="POST" class="form">
               <div class="form-group">
                 <div class="Item_Pic">
                   <div class="row">
@@ -54,7 +54,7 @@
               </div>
               <div class="row">
                 <div class="col-8 offset-3">
-                  <a href="./account.html" class="create">Create Account</a>
+                  <a href="./account.php" class="create">Create Account</a>
                   <i class="fas fa-angle-double-right icon-modify"></i>
                 </div>
               </div>

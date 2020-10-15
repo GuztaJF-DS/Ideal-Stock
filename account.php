@@ -27,7 +27,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-3">
           <div class="Itens_base">
-            <form action="account.html" method="POST" class="form2">
+            <form action="account.php" method="POST" class="form2">
               <div class="form-group">
                 <div class="Item_Pic">
                   <div class="row">
@@ -99,13 +99,13 @@
                 </div>
               </div>
               <!-- quando ela apertar ela é direcionada para o login -->
-              <button
+              <a href="./login.php"><button
                 type="submit"
                 class="btn btn-primary btn-block"
                 id="btnUp"
               >
                 Sign up
-              </button>
+              </button></a>
             </form>
           </div>
         </div>
