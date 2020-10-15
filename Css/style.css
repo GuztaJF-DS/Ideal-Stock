@@ -1,263 +1,323 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
 /*Basic Stuff*/
 .Responsive_image {
   max-width: 23vw;
   height: auto;
-  max-height:49.2vh; 	
+  max-height: 49.2vh;
   margin-top: 3%;
 }
-h1,h2,h3,h4,h5,h6{
-	text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
 }
-.font_Medium{
-	font-size: 4vh;
+.font_Medium {
+  font-size: 4vh;
 }
-.font_Little{
-	font-size: 3vh;
+.font_Little {
+  font-size: 3vh;
 }
 
 /*Title Part*/
-.title_Bar{
-	font-size:25px;
-	background-color: #304b78;
+.title_Bar {
+  font-size: 25px;
+  background-color: #304b78;
 }
-.Tool_Bar{
-	font-size:15px;
-	background-color: #dbb13b;
-	margin-left: 4%;
-	margin-top:2px;
-	border-style:hidden;
-	border-width: 2px;
+.Tool_Bar {
+  font-size: 15px;
+  background-color: #dbb13b;
+  margin-left: 4%;
+  margin-top: 2px;
+  border-style: hidden;
+  border-width: 2px;
 }
-.title_Bar, .Tool_Bar{
-	color:white;
-	text-align: center;
+.title_Bar,
+.Tool_Bar {
+  color: white;
+  text-align: center;
 }
 /*Menu Part*/
-.Menu_base{
-	background-color:#2494a2;
-	height:auto;
+.Menu_base {
+  background-color: #2494a2;
+  height: auto;
 }
-.qtn{
-	width:30%;
+.qtn {
+  width: 30%;
 }
-.Total{
-	width:30%;
-	margin-left:18.4%;
+.Total {
+  width: 30%;
+  margin-left: 18.4%;
 }
-.Search_Input{
-	margin-left:21.5%;
-	width:50%;
-	height:3.5vh;
+.Search_Input {
+  margin-left: 21.5%;
+  width: 50%;
+  height: 3.5vh;
 }
-.Search_Button{	
-	height:5vh;
+.Search_Button {
+  height: 5vh;
 }
-.Buy{
-	margin-left:40%;
+.Buy {
+  margin-left: 40%;
 }
 
 /*Display For Phone*/
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-	.Responsive_pic {
-	  max-width:16vw;
-	  max-height:20vh; 	
-	}
-	.Item_Pic:hover .Text{
-  		opacity:1;
-  		visibility: visible;
-	}
-	.Display{
-		background-color:#304b78;
-		margin-top: 1%;
-	    margin-bottom: 1%;
-	  	margin-left: 10%;
-	  	width:80%;
-	  	height:auto;
-	  	text-align: center;
-	}
-	.Itens_Base_Search{
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-right: 2%;
-		margin-left: 5%;
-		max-width:90%;
-		text-align: center;
-	}
-	.Itens_Base_Search .Item_Pic{
-		position: relative; 
-		display: inline-block;
-		background-color:#2494a2;
-		margin-top: 2%;
-		margin-bottom: 5px;
-		margin-right: 2vw;
-		margin-left: 1vw;
-		max-width:20vw;
-	  	max-height:24vh;  
-		max-width:20%;
-	}
-	.Itens_Base{
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-right: 2%;
-		margin-left: 10%;
-		max-width:80%;
-		text-align: center;
-	}
+  .Responsive_pic {
+    max-width: 16vw;
+    max-height: 20vh;
+  }
+  .Item_Pic:hover .Text {
+    opacity: 1;
+    visibility: visible;
+  }
+  .Display {
+    background-color: #304b78;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    text-align: center;
+  }
+  .Itens_Base_Search {
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 5%;
+    max-width: 90%;
+    text-align: center;
+  }
+  .Itens_Base_Search .Item_Pic {
+    position: relative;
+    display: inline-block;
+    background-color: #2494a2;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    margin-right: 2vw;
+    margin-left: 1vw;
+    max-width: 20vw;
+    max-height: 24vh;
+    max-width: 20%;
+  }
+  .Itens_Base {
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 10%;
+    max-width: 80%;
+    text-align: center;
+  }
 
-	.Itens_Base .Item_Pic{
-		position: relative; 
-		display: inline-block;
-		background-color:#2494a2;
-		margin-top: 2%;
-		margin-bottom: 5px;
-		margin-right: 1vw;
-		margin-left: 5vw;
-		max-width:16vw;
-	  	max-height:24vh;  
-		max-width:20%;
-	}
-	.Product{
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-left: 10%;
-		display:inline-block;
-		margin-right: 2%;
-		width:61.5vw;		
-	}
-	.Product .Product_Info{
-		color:white;
-		margin-left: 1vw;
-		margin-right: 1vw;
-		margin-bottom:3vh;
-		text-align: left;
-	}
-	.Product .Product_Buy{
-		color:white;
-		margin-left: 1vw;
-		margin-right: 1vw;
-		margin-bottom:3vh;
-		text-align: left;
-	}
+  .Itens_Base .Item_Pic {
+    position: relative;
+    display: inline-block;
+    background-color: #2494a2;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    margin-right: 1vw;
+    margin-left: 5vw;
+    max-width: 16vw;
+    max-height: 24vh;
+    max-width: 20%;
+  }
+  .Product {
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    display: inline-block;
+    margin-right: 2%;
+    width: 61.5vw;
+  }
+  .Product .Product_Info {
+    color: white;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 3vh;
+    text-align: left;
+  }
+  .Product .Product_Buy {
+    color: white;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 3vh;
+    text-align: left;
+  }
 
-	.Footer{
-		position: sticky;
-		background-color:#2494a2;
-		margin-top:10%;
-		height:24vh;
-	}
+  .Footer {
+    position: sticky;
+    background-color: #2494a2;
+    margin-top: 10%;
+    height: 24vh;
+  }
 }
 /*Display For Pc*/
 
 @media only screen and (min-width: 768px) {
-	.Responsive_pic {
-	  max-width: 10vw;
-	  max-height:20vh; 
-      z-index:2;	
-	}
+  .Responsive_pic {
+    max-width: 10vw;
+    max-height: 20vh;
+    z-index: 2;
+  }
 
-	.Item_Pic:hover .Text{
-  		opacity:1;
-  		visibility: visible;
-	}
+  .Item_Pic:hover .Text {
+    opacity: 1;
+    visibility: visible;
+  }
 
-	.Display{
-		float:left;
-		background-color:#304b78;
-		margin-top: 10px;
-	    margin-bottom: 10px;
-	 	margin-right: 15px;
-	  	margin-left: 8px;
-	  	width:25vw;
-	  	height:auto;
-	  	text-align: center;
-	}
+  .Display {
+    float: left;
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-left: 8px;
+    width: 25vw;
+    height: auto;
+    text-align: center;
+  }
 
-	.Itens_Base_Search{
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-right: 2%;
-		margin-left:11%;
-		max-width:79%;
-		text-align: center;
-	}
-	.Itens_Base_Search .Item_Pic{
-		position: relative; 
-		display: inline-block;
-		background-color:#2494a2;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-right: 1vw;
-		margin-left: 1vw;
-		min-width:13%;
-		max-width:16%;
-	}
-	.Itens_Base{
-		float:right;
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-right: 2%;
-		max-width:61%;
-		text-align: center;
-	}
+  .Itens_Base_Search {
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 11%;
+    max-width: 79%;
+    text-align: center;
+  }
+  .Itens_Base_Search .Item_Pic {
+    position: relative;
+    display: inline-block;
+    background-color: #2494a2;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    min-width: 13%;
+    max-width: 16%;
+  }
+  .Itens_Base {
+    float: right;
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    max-width: 61%;
+    text-align: center;
+  }
 
-	.Itens_Base .Item_Pic{
-		position: relative; 
-		display: inline-table;
-		background-color:#2494a2;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-right: 1vw;
-		margin-left: 1vw;
-		max-width:5vw;
-    	z-index:1;
-	}
+  .Itens_Base .Item_Pic {
+    position: relative;
+    display: inline-table;
+    background-color: #2494a2;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    max-width: 5vw;
+    z-index: 1;
+  }
 
-	.Product{
-		float:right;
-		background-color:#304b78;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		display:inline-block;
-		margin-right: 2%;
-		width:47vw;		
-	}
-	.Product .Product_Info{
-		color:white;
-		float:left;
-		margin-left: 1vw;
-		margin-right: 1vw;
-		margin-bottom:3vh;
-		text-align: left;
-	}
-	.Product .Product_Buy{
-		color:white;
-		float:right;
-		margin-right: 1vw;
-		margin-bottom:3vh;
-		text-align: left;
-	}
-
-	.Footer{
-		position: sticky;
-		background-color:#2494a2;
-		margin-top:20vh;
-		height:30vh;
-	}
-}
-.Text { 
-    font-size: 1.3vh;
-    visibility: hidden;
-    position: absolute;
-    padding:10px; 
+  .Product {
+    float: right;
+    background-color: #304b78;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 2%;
+    width: 47vw;
+  }
+  .Product .Product_Info {
     color: white;
-    top: 50%; 
-    left: 0; 
-	opacity:0;
-	transition: opacity .2s linear;
-    background-color:rgba(0,0,0,.7);
+    float: left;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 3vh;
+    text-align: left;
+  }
+  .Product .Product_Buy {
+    color: white;
+    float: right;
+    margin-right: 1vw;
+    margin-bottom: 3vh;
+    text-align: left;
+  }
+
+  .Footer {
+    position: sticky;
+    background-color: #2494a2;
+    margin-top: 20vh;
+    height: 30vh;
+  }
+}
+.Text {
+  font-size: 1.3vh;
+  visibility: hidden;
+  position: absolute;
+  padding: 10px;
+  color: white;
+  top: 50%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form {
+  top: 25vh;aa
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+  width: 300px;
+}
+
+.title2 {
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.title3 {
+  text-transform: capitalize;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  box-shadow: 0px 0px 4px 0px rgb(209, 196, 179);
+}
+
+#btn {
+  border-radius: 23px;
+  color: rgb(201, 233, 222);
+  font-family: 'Open Sans';
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+#btn:hover {
+  border: 2px solid white;
+  background-color: #304b78;
+}
+
+.icon-modify {
+  color: #7f8c8d;
+  padding: 0 5px;
+}
+
+.create {
+  color: black;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.img {
+  margin-top: -40px;
+  margin-left: -40px;
+  width: 400px;
 }
