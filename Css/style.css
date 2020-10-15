@@ -1,4 +1,6 @@
-	/*Basic Stuff*/
+/*Basic Stuff*/
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
 	.Responsive_image {
       border-radius:5px;
 	  max-width: 23vw;
@@ -22,7 +24,7 @@
 		border-radius: 200px;
 	}
 
-	/*Title Part*/
+/*Title Part*/
 	.title_Bar{
 		color:white;
 		font-size:25px;
@@ -42,7 +44,7 @@
 		border-bottom-right-radius:200px;
 	}
 
-	/*Menu Part*/
+/*Menu Part*/
 	.Menu_base{
 		height:auto;
 	}
@@ -299,4 +301,56 @@
 	opacity:0;
 	transition: opacity .2s linear;
     background-color:rgba(0,0,0,.7);
+}
+
+.form {
+  top: 25vh;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+  width: 300px;
+}
+
+.title2 {
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.title3 {
+  text-transform: capitalize;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  box-shadow: 0px 0px 4px 0px rgb(209, 196, 179);
+}
+
+#btn {
+  border-radius: 23px;
+  color: rgb(201, 233, 222);
+  font-family: 'Open Sans';
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+#btn:hover {
+  border: 2px solid white;
+  background-color: #304b78;
+}
+
+.icon-modify {
+  color: #7f8c8d;
+  padding: 0 5px;
+}
+
+.create {
+  color: black;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.img {
+  margin-top: -40px;
+  margin-left: -40px;
+  width: 400px;
 }
