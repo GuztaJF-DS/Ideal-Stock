@@ -147,13 +147,16 @@ $produto = ListarProdutos();
         <td>'.$p['peso_produto'].'</td>
         <td>'.$p['largura_produto'].'</td>
         <td>'.$p['comp_produto'].'</td>
-        <td>'.$p['saida_produto'].'</td>
-        <td>'.$p['dt_entrada_produto'].'</td>
-        <td>'.$p['dt_saida_produto'].'</td>
-        <td>'.$p['peso_produto'].'</td>
-        <td>'.$p['largura_produto'].'</td>
+        <td>'.$p['altura_produto'].'</td>
+        <td>'.$p['dt_atualizacao'].'</td>';
+        
+        $produ = ListaCategoriaProduto();
+        while($pr = $produ->fetch_array()){
+          echo '<td>'.$pr['nm_categoria'].'</td>';
+        }
+        echo '
         <td>
-        <a href="?excluir='.$c['cd_categoria'].'">Excluir</a>
+        <a href="?excluir='.$p['cd_produto'].'">Excluir</a>
         </td>      
       </tbody>';
   }

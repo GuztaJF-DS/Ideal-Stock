@@ -103,6 +103,13 @@
         }
     }
 
+    function ListaCategoriaProduto(){
+        $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
+        on(t.cd_categoria = tc.id_categoria) WHERE t.cd_categoria = '.$id_categoria;
+        $res= $GLOBALS['conexao']->query($sql);
+        return $res;
+    }
+
     function ListarProdutos()
     {
         $sql = 'SELECT * from tb_produto';
