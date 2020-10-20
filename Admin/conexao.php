@@ -105,7 +105,20 @@
 
     function ListaCategoriaProduto(){
         $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = tc.id_categoria) WHERE t.cd_categoria = '.$id_categoria;
+        on(t.cd_categoria = cp.id_categoria)';
+        $res= $GLOBALS['conexao']->query($sql);
+        return $res;
+        $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
+        on(t.cd_categoria = cp.id_categoria)';
+        $res= $GLOBALS['conexao']->query($sql);
+        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
+        on(t.cd_categoria = cp.id_categoria)';
+        $res= $GLOBALS['conexao']->query($sql);
+        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
+        on(t.cd_categoria = cp.id_categoria)';
+        $res= $GLOBALS['conexao']->query($sql);
+        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
+        on(t.cd_categoria = cp.id_categoria)';
         $res= $GLOBALS['conexao']->query($sql);
         return $res;
     }
@@ -122,10 +135,10 @@
 
     }
 
-    function DeletarProduto()
+    function DeletarProduto($id)
     {
-        $sql = 'DELETE FROM tb_categoria_produto WHERE id_produto = '.$cd_livro;
-        $sql = 'DELETE FROM tb_produto WHERE cd_produto = '.$cd_livro;
+        $sql = 'DELETE FROM tb_categoria_produto WHERE id_produto = '.$id;
+        $sql = 'DELETE FROM tb_produto WHERE cd_produto = '.$id;
         $res = $GLOBALS['conexao']->query($sql);
        
         if($res){
