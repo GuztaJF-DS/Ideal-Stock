@@ -136,8 +136,16 @@ $produto = ListarProdutos();
         <th scope="row">'.$p['cd_produto'].'</th>
         <td>'.$p['nm_produto'].'</td>
         <td>'.$p['ds_produto'].'</td>
-        <td>'.$p['nm_categoria'].'</td>
-        <td>'.$p['ds_categoria'].'</td>
+        <td>'.$p['marca_produto'].'</td>
+        <td>'.$p['vl_produto'].'</td>
+        <td>'.$p['dt_validade'].'</td>
+        <td>'.$p['qt_produto'].'</td>
+        <td>'.$p['entrada_produto'].'</td>
+        <td>'.$p['saida_produto'].'</td>
+        <td>'.$p['dt_entrada_produto'].'</td>
+        <td>'.$p['ds_produto'].'</td>
+        <td>'.$p['marca_produto'].'</td>
+        <td>'.$p['vl_produto'].'</td>
         <td>
         <a href="?excluir='.$c['cd_categoria'].'">Excluir</a>
         </td>      
