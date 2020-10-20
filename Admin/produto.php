@@ -133,7 +133,9 @@ $produto = ListarProdutos();
   while($p = $produto->fetch_array()){
   echo '<tbody>
         <tr>
-        <th scope="row">'.$p['cd_categoria'].'</th>
+        <th scope="row">'.$p['cd_produto'].'</th>
+        <td>'.$p['nm_produto'].'</td>
+        <td>'.$p['ds_produto'].'</td>
         <td>'.$p['nm_categoria'].'</td>
         <td>'.$p['ds_categoria'].'</td>
         <td>
