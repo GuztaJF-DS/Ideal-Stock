@@ -120,9 +120,7 @@
 
     function ListarProdutoComFiltro()
     {
-        $sql = 'DELETE FROM tb_categoria_produto WHERE id_produto = '.$id;
-        $sql = 'DELETE FROM tb_produto WHERE cd_produto = '.$id;
-        $res = $GLOBALS['conexao']->query($sql);
+
     }
 
     function DeletarProduto($id)
