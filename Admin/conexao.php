@@ -108,19 +108,7 @@
         on(t.cd_categoria = cp.id_categoria)';
         $res= $GLOBALS['conexao']->query($sql);
         return $res;
-        $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria)';
-        $res= $GLOBALS['conexao']->query($sql);
-        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria)';
-        $res= $GLOBALS['conexao']->query($sql);
-        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria)';
-        $res= $GLOBALS['conexao']->query($sql);
-        return $res;   $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria)';
-        $res= $GLOBALS['conexao']->query($sql);
-        return $res;
+
     }
 
     function ListarProdutos()
