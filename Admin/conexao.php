@@ -44,19 +44,8 @@
 
     function DeletarCategoria($id_categoria)
     {
-        $sql1 =  'DELETE FROM tb_categoria_produto Where id_categoria ='.$id_categoria;
-        $res1 = $GLOBALS['conexao']->query($sql1);
         $sql2 = 'DELETE FROM tb_categoria  Where cd_categoria = '.$id_categoria;
         $res2 = $GLOBALS['conexao']->query($sql2);
-
-        if($res1)
-        {
-            alert("Relações feitas a essa categoria foram excluidas!");
-        }
-        else
-        {
-            alert("Erro ao deletar as relações ligadas a essa categoria!\r\n".$GLOBALS['$conexao']->error);
-        }
 
         if($res2)
         {
