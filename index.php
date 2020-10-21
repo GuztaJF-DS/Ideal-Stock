@@ -53,7 +53,7 @@
                   <i class="fas fa-angle-double-right icon-modify"></i>
                 </div>
               </div>
-              <input type="submit" class="btn btn-primary btn-block" name="Login" id="btn" value="Sign in">               
+              <input type="submit" class="btn btn-primary btn-block" name="Login" id="Login" value="Sign in">               
             </form>
           </div>
         </div>
@@ -63,14 +63,19 @@
       if(isset($_POST['Login'])){
         $login = $_POST['login'];
         $password = $_POST['password'];
+        $correct=false;
         $usuario = ListarUsuario();
         while($s = $usuario->fetch_array()){
           if($s['login_user'] === $login && $s['senha_user'] === $password){
-            header('location:stock.php');
-          }else{
-            alert("Login ou senha incorretos!");
+            $correct=true;
+            echo ("<script>
+                window.location.href='stock.php';
+                </script>");
           }
         }
+        if($correct!=true){
+              echo("Login ou senha incorretos!");
+            }
       }
     ?>
   </body>
