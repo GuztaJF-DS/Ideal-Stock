@@ -108,25 +108,30 @@
       </div>
     </div>
 
-      <?php
+    <?php
       if($_POST){
         $nome = $_POST['name'];
         $email = $_POST['email'];
         $login = $_POST['login'];
         $password = $_POST['password'];
         $password2 = $_POST['password2'];
-        if($nome !='' && $email !='' && $login !='' && $password !='' && $password2 !='' && mb_strlen($password) >= 6 && mb_strlen($password2) >= 6 && $password===$password2){
-          CadastrarUsuario($nome,'0',$login,$password,$email);
-          echo ("<script>
-          window.location.href='index.php';
-                  </script>");
+        if($nome !='' && $email !='' && $login !='' && $password !='' && $password2 !=''){
+          if(mb_strlen($password) >= 6 && mb_strlen($password2) >= 6 ){
+            if($password===$password2){
+              CadastrarUsuario($nome,'0',$login,$password,$email);
+              echo ("<script>
+              window.location.href='index.php';
+                      </script>");
+            }else{
+              alert("Confirmação de senha incorreta!");
+            }
+          }else{
+            alert("Mínimo de 6 caracteres na senha!");
+          }
         }else{
-          echo ("<script>
-          window.alert('Sem lacunas em branco e a senha com 6 dígitos!!');
-                  </script>");
-        }
-        
+          alert("Campos obrigatório sem preenchimento!");
       }
+    }
       ?>
 
   </body>

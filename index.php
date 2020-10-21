@@ -65,5 +65,21 @@
         </div>
       </div>
     </div>
+    <?php
+    if($_POST){
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $usuario = ListarUsuario();
+        while($s = $usuario->fetch_array()){
+          if($s['login_user'] === $login && $s['senha_user'] === $password){
+            echo ("<script>
+            window.location.href='stock.php';
+                    </script>");
+          }else{
+            alert("Login ou senha incorretos!");
+          }
+        }
+      }
+    ?>
   </body>
 </html>
