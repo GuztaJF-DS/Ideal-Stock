@@ -117,6 +117,9 @@
         $password2 = $_POST['password2'];
         if($nome !='' && $email !='' && $login !='' && $password !='' && $password2 !='' && mb_strlen($password) >= 6 && mb_strlen($password2) >= 6 && $password===$password2){
           CadastrarUsuario($nome,'0',$login,$password,$email);
+          echo ("<script>
+          window.location.href='index.php';
+                  </script>");
         }else{
           echo ("<script>
           window.alert('Sem lacunas em branco e a senha com 6 dígitos!!');

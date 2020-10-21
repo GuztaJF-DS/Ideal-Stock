@@ -1,3 +1,4 @@
+<?php include('./Admin/conexao.php');?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,9 +33,9 @@
                   <label for="email" class="title2">Login</label>
                   <i class="far fa-envelope icon-modify"></i>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
-                    id="email"
+                    name="login"
                     aria-describedby="emailHelp"
                     placeholder="Enter with your login"
                   />
@@ -47,7 +48,7 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="password"
+                    name="password"
                     placeholder="Enter with your password"
                   />
                 </div>

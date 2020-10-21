@@ -137,6 +137,12 @@
         alert("Usuario não cadastrado");
     }
 
+    function ListarUsuario(){
+        $sql = 'SELECT * FROM tb_user';
+        $res = $GLOBALS['conexao']->query($sql);
+        return $res;
+    }
+
     //estoque
 
     //utilitarias
