@@ -1,3 +1,4 @@
+<?php include('./Admin/conexao.php');?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,8 +25,8 @@
     "
   >
     <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3">
+      <div class="row justify-content-left">
+        <div class="Account_Part">
           <div class="Itens_base">
             <form action="account.php" method="POST" class="form2">
               <div class="form-group">
@@ -35,13 +36,13 @@
                       <h2 class="title3">Create Account</h2>
                     </div>
                   </div>
-                  <label for="email" class="title2">Name</label>
+                  <label for="name" class="title2">Name</label>
                   <span class="icon2">*</span>
                   <i class="fas fa-user icon-modify"></i>
                   <input
                     type="text"
                     class="form-control"
-                    id="name"
+                    name="name"
                     placeholder="Enter with your name"
                   />
                 </div>
@@ -54,7 +55,7 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="email"
+                    name="email"
                     aria-describedby="emailHelp"
                     placeholder="Enter with your email"
                   />
@@ -62,12 +63,12 @@
               </div>
               <div class="form-group">
                 <div class="Item_Pic">
-                  <label for="password" class="title2">Login</label>
+                  <label for="password" class="title2">UserName</label>
                   <span class="icon2">*</span>
                   <input
                     type="text"
                     class="form-control"
-                    id="login"
+                    name="login"
                     placeholder="Enter with some login"
                   />
                 </div>
@@ -80,30 +81,74 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="password"
+                    name="password"
+                    placeholder="Enter with your password"
+                  />
+                  <li class="obsPassword">Ao menos 6 dígitos</li>
+                </div>
+                <div class="form-group">
+                <div class="Item_Pic">
+                  <label for="password2" class="title2">Confirm your Password</label>
+                  <span class="icon2">*</span>
+                  <i class="fas fa-lock icon-modify"></i>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password2"
                     placeholder="Enter with your password"
                   />
                   <li class="obsPassword">Ao menos 6 dígitos</li>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="Item_Pic">
-                  <label for="password" class="title2">Telefone</label>
-                  <i class="fas fa-phone icon-modify"></i>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="tel"
-                    placeholder="Enter with your telefone"
-                  />
-                </div>
-              </div>
               <!-- quando ela apertar ela é direcionada para o login -->
-              <a href="index.php"><input type="button" class="btn btn-primary btn-block" id="btnUp" value="Sign up"></a>
+              <input type="submit" class="btn btn-primary btn-block" name="Login" id="btnUp" value="Sign up"></a>
             </form>
           </div>
         </div>
       </div>
     </div>
+
+    <?php
+      if(isset($_POST['Login'])){
+        $cadastrado=false;
+        $nome = $_POST['name'];
+        $email = $_POST['email'];
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password2'];
+        $usuario = ListarUsuario();
+        while($s = $usuario->fetch_array()){
+        if($email==$s['email_user']){
+            alert("E-Mail já cadastrado");
+            $cadastrado=true;
+          }
+        if($login==$s['login_user'] && $cadastrado==false){
+            alert("Nome de Usuario já Utilizado");
+            $cadastrado=true;
+          }
+        }
+        if($cadastrado==false){
+          if($nome !='' && $email !='' && $login !='' && $password !='' && $password2 !=''){
+            if(mb_strlen($password) >= 6 && mb_strlen($password2) >= 6 ){
+              if($password===$password2){
+                CadastrarUsuario($nome,'0',$login,$password,$email);
+                echo ("<script>
+                window.location.href='index.php';
+                        </script>");
+              }else{
+                alert("Confirmação de senha incorreta!");
+              }
+            }else{
+              alert("Mínimo de 6 caracteres na senha!");
+            }
+          }else{
+            alert("Campos obrigatório sem preenchimento!");
+        }
+      }
+    }
+      ?>
+
   </body>
 </html>
+
+

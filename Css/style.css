@@ -90,9 +90,15 @@ h6 {
 .Buy {
   margin-left: 40%;
 }
+.Account_Part{  
+    margin-left:12%;
+  }
 
 /*Display For Phone*/
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (min-width: 0px) and (max-width: 785px) {
+.Login_Part{
+    margin-left:14vw;
+  }
   .Responsive_pic {
     max-width: 16vw;
     max-height: 20vh;
@@ -191,7 +197,10 @@ h6 {
 }
 /*Display For Pc*/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 786px) {
+  .Login_Part{
+    margin-left:5vw;
+  }
   .Responsive_pic {
     max-width: 10vw;
     max-height: 20vh;
@@ -265,7 +274,6 @@ h6 {
     border-style: solid;
     border-color: #39a7b5;
     border-radius: 5px;
-    float: right;
     border-style: solid;
     border-color: #39a7b5;
     margin-top: 10px;

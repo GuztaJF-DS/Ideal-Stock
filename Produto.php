@@ -13,7 +13,7 @@
 <body style="background-color:#F0FDFF;">
     <div class="container-fluid">
       <div class="row">
-          <div class="col-12 title_Bar"><a href="index.html"><font color=white>Ideal Stock</font></a></div>
+          <div class="col-12 title_Bar"><a href="stock.php"><font color=white>Ideal Stock</font></a></div>
           <div class="col-10 Tool_Bar">Barra de Ferramentas</div>
         </div>
       <div class="row mt-4">
