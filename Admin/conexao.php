@@ -97,7 +97,6 @@
         on(t.cd_categoria = cp.id_categoria)';
         $res= $GLOBALS['conexao']->query($sql);
         return $res;
-
     }
 
     function ListarProdutos()
@@ -128,6 +127,15 @@
 
 
     //usuario 
+
+    function CadastrarUsuario($nm_user,$cd_nivel,$login_user,$senha_user,$tel_user,$email_user){
+        $sql = 'INSERT INTO tb_user VALUES(null,"'.$nm_user.'",'.$cd_nivel.',"'.$login_user.'","'.$senha_user.'","'.$email_user.'")';
+        $res = GLOBALS['conexao']->query($sql);
+        if($res){
+            alert("Usuario Cadastrado");
+        }
+        alert("Usuario não cadastrado");
+    }
 
     //estoque
 

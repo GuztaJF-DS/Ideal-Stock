@@ -35,13 +35,13 @@
                       <h2 class="title3">Create Account</h2>
                     </div>
                   </div>
-                  <label for="email" class="title2">Name</label>
+                  <label for="name" class="title2">Name</label>
                   <span class="icon2">*</span>
                   <i class="fas fa-user icon-modify"></i>
                   <input
                     type="text"
                     class="form-control"
-                    id="name"
+                    name="name"
                     placeholder="Enter with your name"
                   />
                 </div>
@@ -54,7 +54,7 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="email"
+                    name="email"
                     aria-describedby="emailHelp"
                     placeholder="Enter with your email"
                   />
@@ -67,7 +67,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="login"
+                    name="login"
                     placeholder="Enter with some login"
                   />
                 </div>
@@ -80,22 +80,23 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="password"
+                    name="password"
                     placeholder="Enter with your password"
                   />
                   <li class="obsPassword">Ao menos 6 dígitos</li>
                 </div>
-              </div>
-              <div class="form-group">
+                <div class="form-group">
                 <div class="Item_Pic">
-                  <label for="password" class="title2">Telefone</label>
-                  <i class="fas fa-phone icon-modify"></i>
+                  <label for="password2" class="title2">Confirm your Password</label>
+                  <span class="icon2">*</span>
+                  <i class="fas fa-lock icon-modify"></i>
                   <input
-                    type="number"
+                    type="password"
                     class="form-control"
-                    id="tel"
-                    placeholder="Enter with your telefone"
+                    name="password2"
+                    placeholder="Enter with your password"
                   />
+                  <li class="obsPassword">Ao menos 6 dígitos</li>
                 </div>
               </div>
               <!-- quando ela apertar ela é direcionada para o login -->
@@ -105,5 +106,20 @@
         </div>
       </div>
     </div>
+
+      <?php>
+      
+      if($_POST){
+          $nome = $_POST['name'];
+          $email = $_POST['email'];
+          $login = $_POST['login'];
+          $password = $_POST['password'];
+          CadastrarUsuario($nome,'0',$login,$password,$email);
+      }
+      ?>
+
+
+
+
   </body>
 </html>
