@@ -42,7 +42,6 @@ nm_user varchar(80) not null,
 cd_nivel int not null,
 login_user varchar(80) not null,
 senha_user varchar(20) not null,
-tel_user varchar(15),
 email_user varchar(80)
 )engine=InnoDB default charset=utf8;
 

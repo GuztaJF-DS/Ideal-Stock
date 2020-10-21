@@ -1,3 +1,4 @@
+<?php include('./Admin/conexao.php');?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -100,26 +101,32 @@
                 </div>
               </div>
               <!-- quando ela apertar ela é direcionada para o login -->
-              <a href="index.php"><input type="button" class="btn btn-primary btn-block" id="btnUp" value="Sign up"></a>
+              <input type="submit" class="btn btn-primary btn-block" id="btnUp" value="Sign up"></a>
             </form>
           </div>
         </div>
       </div>
     </div>
 
-      <?php>
-      
+      <?php
       if($_POST){
-          $nome = $_POST['name'];
-          $email = $_POST['email'];
-          $login = $_POST['login'];
-          $password = $_POST['password'];
+        $nome = $_POST['name'];
+        $email = $_POST['email'];
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password2'];
+        if($nome !='' && $email !='' && $login !='' && $password !='' && $password2 !='' && mb_strlen($password) >= 6 && mb_strlen($password2) >= 6 && $password===$password2){
           CadastrarUsuario($nome,'0',$login,$password,$email);
+        }else{
+          echo ("<script>
+          window.alert('Sem lacunas em branco e a senha com 6 dígitos!!');
+                  </script>");
+        }
+        
       }
       ?>
 
-
-
-
   </body>
 </html>
+
+
