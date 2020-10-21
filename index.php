@@ -22,7 +22,7 @@
         <div class="col-12 col-sm-6 col-md-3">
           <div class="Itens_base">
             <img src="./Image/logo.png" class="img" />
-            <form action="stock.php" method="POST" class="form">
+            <form action="index.php" method="POST" class="form">
               <div class="form-group">
                 <div class="Item_Pic">
                   <div class="row">
