@@ -74,7 +74,7 @@
           }
         }
         if($correct!=true){
-              echo("Login ou senha incorretos!");
+              alert("Login ou senha incorretos!");
             }
       }
     ?>

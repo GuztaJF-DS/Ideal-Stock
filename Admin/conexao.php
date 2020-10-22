@@ -123,7 +123,23 @@
             alert("Erro ao excluir produto da categoria ".$GLOBALS['conexao']->error);
         }
     }
+    //fotos
 
+    function CadastrarFotos($nm_foto,$id_produto){
+    $sql='INSERT INTO tb_foto VALUES(null,"'.$nm_foto.'",'.$id_produto.');';
+    $res=$GLOBALS['conexao']->query($sql);
+    if($res){
+        alert("Capa cadastrada com sucesso");
+    }
+    else{
+        alert("Erro Ao Cadastrar Capa: \r\n".$GLOBALS['$conexao']->error);
+    }
+}
+function ListarFotos($id_produto){
+    $sql='SELECT * FROM tb_foto WHERE id_produto = '.$id_produto.';';
+    $res=$GLOBALS['conexao']->query($sql);
+    return $res;
+}
 
 
     //usuario 

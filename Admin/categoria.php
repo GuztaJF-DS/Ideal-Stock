@@ -20,24 +20,27 @@ h2{
 
 </style>
 
-<body>
+<body style="background-color: #ecf0f1">
 
 <div class="container-fluid">
 <div class="row">
-	<div class="col-md-6 offset-4">
+<div class="col-12 title_Bar"><a href="../stock.php"><font color=white>Ideal Stock</font></a></div>
+<div class="col-10 Tool_Bar"><a href="categoria.php"><font color=white>Add Categoria</font></a>-<a href="produto.php"><font color=white>Add Produto</font></a></div>
+</div>
+	<div class="col-4 offset-4">
 		<h2>Crud de Categorias</h2>
 	</div>
 </div>
-
+<div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
 <form action="categoria.php" method="POST">
   <label for="nome">Nome da Categoria:</label><br>
-	<input type="text" name="nome"><br>
+	<input type="text" class="form-control" name="nome"><br>
   <label for="descricao">Descrição da Categoria:</label>
-	<textarea name="descricao"></textarea>
+	<textarea name="descricao" class="form-control"></textarea>
 	<br>
 	<input type="submit" class="btn btn-primary" name="Cadastrar">
 </form>
-
+</div>
 </div>
 
 <br>
@@ -59,7 +62,8 @@ if(isset($_GET['excluir'])){
 }
 
 $categoria = ListarCategorias();
-  echo '<table class="table table-striped table tablel-hover table table-bordered table table-sm>
+  echo '<div class="col-10 offset-1">
+  <table class="table table-striped table tablel-hover table table-bordered table table-sm>
         <thead  class="thead-dark">
         <tr>
         <th scope="col">Código</th>
@@ -80,7 +84,8 @@ $categoria = ListarCategorias();
         </td>      
       </tbody>';
   }
-  echo '</table';
+  echo '</table>
+        </div>';
 
 ?>
 

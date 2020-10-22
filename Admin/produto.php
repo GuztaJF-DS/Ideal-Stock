@@ -20,66 +20,69 @@ h2{
 
 </style>
 
-<body>
+<body style="background-color: #ecf0f1">
 
 <div class="container-fluid">
 <div class="row">
-	<div class="col-md-6 offset-4">
+<div class="col-12 title_Bar"><a href="../stock.php"><font color=white>Ideal Stock</font></a></div>
+<div class="col-10 Tool_Bar"><a href="categoria.php"><font color=white>Add Categoria</font></a>-<a href="produto.php"><font color=white>Add Produto</font></a></div>
+</div>
+	<div class="col-4 offset-4">
 		<h2>Crud de Produtos</h2>
 	</div>
 </div>
-
+<div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
 <form action="produto.php" method="POST">
   <label for="nome">Nome do Produto:</label><br>
-	<input type="text" name="nome"><br>
-  <label for="descricao">Descrição do Produto:</label>
-	<textarea name="descricao"></textarea><br>
+	<input type="text" class="form-control" name="nome"><br>
+  <label for="descricao">Descrição do Produto:</label><br>
+	<textarea name="descricao" class="form-control"></textarea><br>
   <label for="marca">Marca:</label><br>
-	<input type="text" name="marca"><br>
-  <label for="valor">Valor:</label>
-  <input type="number" name="valor"/><br>
+	<input type="text" class="form-control" name="marca"><br>
+  <label for="valor">Valor:</label><br>
+  <input type="number" class="form-control" name="valor"/><br>
   <label for="dval">Data de Validade:</label><br>
-	<input type="date" name="dval"><br>
-  <label for="qtd">Quantidade:</label>
-	<input type="number" name="qtd"></input><br>
+	<input type="date" class="form-control" name="dval"><br>
+  <label for="qtd">Quantidade:</label><br>
+	<input type="number" class="form-control" name="qtd"></input><br>
   <label for="qtent">Qtd de Entrada:</label><br>
-	<input type="number" name="qtent"><br>
-  <label for="qtsai">Qtd de Saida</label>
-	<input type="number" name="qtsai"></input><br>
+	<input type="number" class="form-control" name="qtent"><br>
+  <label for="qtsai">Qtd de Saida</label><br>
+	<input type="number" class="form-control" name="qtsai"></input><br>
   <label for="dtent">Data de Entrada:</label><br>
-	<input type="date" name="dtent"><br>
-  <label for="dtsai">Data de Saida</label>
-	<input type="date" name="dtsai"></input><br>
+	<input type="date" class="form-control" name="dtent"><br>
+  <label for="dtsai">Data de Saida</label><br>
+	<input type="date" class="form-control" name="dtsai"></input><br>
   <label for="peso">Peso:</label><br>
-	<input type="number" name="peso"><br>
-  <label for="largura">Largura:</label>
-  <input type="number" name="largura"/><br>
+	<input type="number" class="form-control" name="peso"><br>
+  <label for="largura">Largura:</label><br>
+  <input type="number" class="form-control" name="largura"/><br>
   <label for="comp">Comprimento:</label><br>
-	<input type="number" name="comp"><br>
-  <label for="altura">Altura:</label>
-	<input type="number" name="altura"></input><br>
+	<input type="number" class="form-control" name="comp"><br>
+  <label for="altura">Altura:</label><br>
+	<input type="number" class="form-control" name="altura"></input><br>
   <label for="dtat">Data Atualização:</label><br>
-	<input type="date" name="datu"><br>
+	<input type="date" class="form-control" name="datu"><br>
+  <label for="categorias">Categorias:</label><br>
   <div class="row">
-  <div class="col-4 offset-2">
-	  <label for="categorias">Categorias:</label><br>
+  <div class="col-4 offset">
+	  
 	  <?php 
-	  	$categorias = ListarCategorias();
-	  	while($c = $categorias->fetch_array()){
-	  		echo '<input type="checkbox" name="categoria" value="'.$c['cd_categoria'].'">'.$c['nm_categoria'];
+	  	$categorias=ListarCategorias();
+        while($c=$categorias->fetch_array()){
+        echo '<input type="checkbox" name="categoria" class="form-check-input form-control btn-block" id="C'.$c['cd_categoria'].'" value="'.$c['cd_categoria'].'">   
+        <label class="form-control-lg " for="C'.$c['cd_categoria'].'">'.$c['nm_categoria'].'</label><br>';
       }
     ?>
   </div>  
   </div>
 	<input type="submit" class="btn btn-primary" name="Cadastrar">
 </form>
-
 </div>
-
+</div>
 <br>
 
 <?php 
-
 if($_POST){
   
   $nome = $_POST['nome'];
@@ -157,10 +160,11 @@ $produto = ListarProdutos();
         echo '
         <td>
         <a href="?excluir='.$p['cd_produto'].'">Excluir</a>
+        <a href="foto.php?foto='.$p['cd_produto'].'">Adicionar Foto</a>
         </td>      
       </tbody>';
   }
-  echo '</table';
+  echo '</table>';
 
 ?>
 

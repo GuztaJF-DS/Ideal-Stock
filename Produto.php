@@ -1,3 +1,4 @@
+<?php include('./Admin/conexao.php');?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,7 +15,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-12 title_Bar"><a href="stock.php"><font color=white>Ideal Stock</font></a></div>
-          <div class="col-10 Tool_Bar">Barra de Ferramentas</div>
+          <div class="col-10 Tool_Bar"><a href="Admin/categoria.php"><font color=white>Add Categoria</font></a>-<a href="Admin/produto.php"><font color=white>Add Produto</font></a></div>
         </div>
       <div class="row mt-4">
         <div class="col-10 offset-1 Menu_base mt-2">
