@@ -108,11 +108,12 @@ if(isset($_GET['excluir'])){
   DeletarProduto($_GET['excluir']);
 }
 
-$produto = ListarProdutos();
+$produto = ListarProdutos(null,null);
   echo '<table class="table table-striped table tablel-hover table table-bordered table table-sm>
         <thead  class="thead-dark">
         <tr>
         <th scope="col">Código</th>
+        <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
         <th scope="col">Marca</th>
@@ -129,7 +130,6 @@ $produto = ListarProdutos();
         <th scope="col">Altura</th>
         <th scope="col">Data de Atualização</th>
         <th scope="col">Categorias</th>
-        <th scope="col">#</th>
         </tr>
         </thead>'
         ;
@@ -137,6 +137,10 @@ $produto = ListarProdutos();
   echo '<tbody>
         <tr>
         <th scope="row">'.$p['cd_produto'].'</th>
+        <td>
+        <a href="?excluir='.$p['cd_produto'].'">Excluir</a>
+        <a href="foto.php?foto='.$p['cd_produto'].'">Adicionar Foto</a>
+        </td>  
         <td>'.$p['nm_produto'].'</td>
         <td>'.$p['ds_produto'].'</td>
         <td>'.$p['marca_produto'].'</td>
@@ -158,10 +162,6 @@ $produto = ListarProdutos();
           echo '<td>'.$pr['nm_categoria'].'</td>';
         }
         echo '
-        <td>
-        <a href="?excluir='.$p['cd_produto'].'">Excluir</a>
-        <a href="foto.php?foto='.$p['cd_produto'].'">Adicionar Foto</a>
-        </td>      
       </tbody>';
   }
   echo '</table>';

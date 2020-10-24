@@ -20,24 +20,36 @@
       <div class="row mt-4">
         <div class="col-10 offset-1 Menu_base mt-2">
           <h2 class="Line">Produto</h2>
-            <div class="Display"> 
-                <img src="Image/mene.png" class="Responsive_image">
-                  <h3 class="font_Medium"></h3>
-            </div>
+            <?php
+              $Product=ListarProdutos("Product",$_GET['id']);
+              while ($p=$Product->fetch_array()) {
+                $fotos=ListarFotos($p['cd_produto']);
+                $f=$fotos->fetch_array();
+                echo '<div class="Display"> 
+                      <img src="'.$f['nm_foto'].'" class="Responsive_image">
+                      <h3 class="font_Medium"></h3>
+                </div>';
+              }    
+            ?>
                 <div class="Product">
-                    <div class="Product_Info"><br>
-                      <strong>Produto:</strong> One Hot Minute<br>
-                      <strong>Preço:</strong> 00.00 R$<br>
-                      <strong>Quantidade diponivel:</strong>00<br>
-                      <strong>Marca:</strong> Rede Hote<br>
-                      <strong>Data de Entrada:</strong> 12/09/1995<br>
-                      <strong>Descrição:</strong>Um album de Rock 
-                    </div>
-                    <div class="Product_Buy"><br>
-                      <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn"><br> 
-                      <strong>Custo Total :</strong> 00.00 R$<br> 
-                      <input type="Button" class="mt-2 mb-2 Buy" name="Aderir" value="Aderir">
-                    </div>
+                  <?php
+                    $Product=ListarProdutos("Product",$_GET['id']);
+                    while($p=$Product->fetch_array()){
+                      echo '<div class="Product_Info"><br>
+                      <strong>Produto:</strong>'.$p['nm_produto'].'<br>
+                      <strong>Preço:</strong> '.$p['vl_produto'].' R$<br>
+                      <strong>Quantidade diponivel:</strong>'.$p['qt_produto'].'<br>
+                      <strong>Marca:</strong> '.$p['marca_produto'].'<br>
+                      <strong>Data de Entrada:</strong> '.$p['entrada_produto'].'<br>
+                      <strong>Descrição:</strong>'.$p['ds_produto'].'</div>
+                      <div class="Product_Buy"><br>
+                        <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn"><br> 
+                        <strong>Custo Total :</strong> 00.00 R$<br> 
+                        <input type="Button" class="mt-2 mb-2 Buy" name="Aderir" value="Aderir">
+                      </div>';
+                      }
+
+                    ?>
                 </div>
           </div>
           </div>  

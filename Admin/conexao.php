@@ -94,14 +94,31 @@
 
     function ListaCategoriaProduto(){
         $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria)';
+        on(t.cd_categoria = cp.id_categoria);';
         $res= $GLOBALS['conexao']->query($sql);
         return $res;
     }
 
-    function ListarProdutos()
+    function ListarProdutos($type,$id)
     {
-        $sql = 'SELECT * from tb_produto';
+        
+        if($type==null){
+            $sql = 'SELECT * from tb_produto;';
+        }
+        else if($type=="Display"){
+            $sql = 'SELECT * from tb_produto
+            ORDER BY cd_produto DESC
+            LIMIT 0,1;';
+        }
+        else if($type=="Products"){
+            $sql = 'SELECT * from tb_produto
+            ORDER BY cd_produto DESC
+            LIMIT 1,12;';
+        }
+        else if($type=="Product"){
+            $sql = 'SELECT * from tb_produto
+            WHERE cd_produto='.$id.';';
+        }
         $res = $GLOBALS['conexao']->query($sql);
         return $res;
     }

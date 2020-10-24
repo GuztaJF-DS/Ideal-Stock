@@ -19,66 +19,29 @@
         <div class="col-10 offset-1 Menu_base mt-2">
           <h2 class="Line">Destaque</h2>
           <?php
-          $Product=ListarProdutos();
+          $Product=ListarProdutos("Display",null);
           while ($p=$Product->fetch_array()) {
             $fotos=ListarFotos($p['cd_produto']);
             $f=$fotos->fetch_array();
             echo '<div class="Display"> 
-                <a href="Produto.php"><img src="'.$f['nm_foto'].'" class="Responsive_image"></a>
+                <a href="Produto.php?id='.$p['cd_produto'].'"><img src="'.$f['nm_foto'].'" class="Responsive_image"></a>
                   <h3 class="font_Medium">'.$p['nm_produto'].'</h3>
                   <h4 class="font_Little">'.$p['vl_produto'].' R$</h4>
             </div>';
           }            
             ?>
             <div class="Itens_Base">
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produtophpl"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene1.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
+              <?php
+              $Product=ListarProdutos("Products",null);
+              while ($p=$Product->fetch_array()) {
+                $fotos=ListarFotos($p['cd_produto']);
+                $f=$fotos->fetch_array();
+                echo'<div class="Item_Pic"> 
+                      <a href="Produto.php?id='.$p['cd_produto'].'"><img src="'.$f['nm_foto'].'"  class="Responsive_pic"></a>
+                      <a href="Produto.php?id='.$p['cd_produto'].'"><h2 class="Text"><span><strong>'.$p['nm_produto'].'</strong></span><br><span>'.$p['vl_produto'].' R$</span></h2></a>
+                     </div>';
+                }
+              ?>
             </div>
         </div>
       </div>  
@@ -87,54 +50,17 @@
           <h2 h2 class="Line">Pesquisa</h2>
           <input type="text" name="Search" class="Search_Input"><input type="button" name="Search_Button" value="✓" class="Search_Button">
             <div class="Itens_Base_Search">
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
-              <div class="Item_Pic"> 
-               <a href="Produto.php"><img src="Image/mene2.png"  class="Responsive_pic"></a>
-                <a href="Produto.php"><h2 class="Text"><span>One Hot Minute</span></h2></a>
-              </div>
+              <?php
+              $Product=ListarProdutos("Products",null);
+              while ($p=$Product->fetch_array()) {
+                $fotos=ListarFotos($p['cd_produto']);
+                $f=$fotos->fetch_array();
+                echo'<div class="Item_Pic"> 
+                      <a href="Produto.php?id='.$p['cd_produto'].'"><img src="'.$f['nm_foto'].'"  class="Responsive_pic"></a>
+                      <a href="Produto.php?id='.$p['cd_produto'].'"><h2 class="Text"><span>'.$p['nm_produto'].'</span></h2></a>
+                     </div>';
+                }
+              ?>
         </div>
       </div>
       </div>

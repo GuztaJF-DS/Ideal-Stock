@@ -46,7 +46,7 @@ h2{
 <?php
 if(isset($_GET['foto'])){
     if($_POST){
-        $foto='Image/Produto/'.$_FILES['foto']['name'];
+        $foto='Image/Produto/'.$_POST['id_produto'].$_FILES['foto']['name'];
         $destino='../'.$foto;
         $fotoTmp=$_FILES['foto']['tmp_name'];
         if(move_uploaded_file($fotoTmp,$destino)){
