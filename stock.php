@@ -177,10 +177,7 @@
         </div>
       </div>
       </div>
-<<<<<<< HEAD
 
-
-=======
       <div class="col-10 offset-1 Page mt-2">
       <?php
         $P=ListarProdutos("Total",null,$Page,$NItens);
@@ -192,7 +189,6 @@
         }
       ?>
       </div>
->>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
       <div class="row">
       <div class="col-12"
       <div class="Itens_Base">
