@@ -99,7 +99,7 @@
         return $res;
     }
 
-    function ListarProdutos($type,$id)
+    function ListarProdutos($type,$id,$I1,$I2)
     {
         
         if($type==null){
@@ -115,9 +115,17 @@
             ORDER BY cd_produto DESC
             LIMIT 1,12;';
         }
+        else if($type=="Search"){
+            $sql = 'SELECT * from tb_produto
+            ORDER BY nm_produto ASC
+            LIMIT '.$I1.','.$I2.';';
+        }
         else if($type=="Product"){
             $sql = 'SELECT * from tb_produto
             WHERE cd_produto='.$id.';';
+        }
+        else if($type=="Total"){
+            $sql = 'SELECT COUNT(cd_produto) from tb_produto;';
         }
         $res = $GLOBALS['conexao']->query($sql);
         return $res;
