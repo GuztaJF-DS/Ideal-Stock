@@ -78,7 +78,7 @@ h6 {
   border-radius: 5px;
   height: auto;
   transition-property: color, background-color;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 .Search_Button:hover {
   color: white;
@@ -98,11 +98,10 @@ h6 {
 
 /*Display For Phone*/
 @media only screen and (min-width: 0px) and (max-width: 785px) {
-<<<<<<< HEAD
   .Login_Part {
     margin-left: 14vw;
-=======
-  .Page{
+  }
+  .Page {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 2%;
@@ -110,9 +109,8 @@ h6 {
     max-width: 79%;
     text-align: center;
   }
-.Login_Part{
-    margin-left:14vw;
->>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
+  .Login_Part {
+    margin-left: 14vw;
   }
   .Responsive_pic {
     max-width: 16vw;
@@ -214,21 +212,19 @@ h6 {
 /*Display For Pc*/
 
 @media only screen and (min-width: 786px) {
-<<<<<<< HEAD
   .Login_Part {
     margin-left: 5vw;
-=======
-  .Page{
+  }
+  .Page {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 2%;
     margin-left: 11%;
     text-align: center;
   }
-  
-  .Login_Part{
-    margin-left:5vw;
->>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
+
+  .Login_Part {
+    margin-left: 5vw;
   }
   .Responsive_pic {
     max-width: 10vw;
@@ -332,22 +328,22 @@ h6 {
     height: 30vh;
   }
 }
-.PageButtons{
-    border-style: solid;
-    border-color: #39a7b5;
-    color:#F0FDFF;
-    background-color: #39a7b5;
-    border-radius: 5px;
-    margin-left:5px;
-    text-align: center;
-    transition-property: color, background-color;
-    transition-duration: .2s;
-  }
-  .PageButtons:hover{
-    border-color: #39a7b5;
-    color:#39a7b5;
-    background-color: #F0FDFF;
-  }
+.PageButtons {
+  border-style: solid;
+  border-color: #39a7b5;
+  color: #f0fdff;
+  background-color: #39a7b5;
+  border-radius: 5px;
+  margin-left: 5px;
+  text-align: center;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+}
+.PageButtons:hover {
+  border-color: #39a7b5;
+  color: #39a7b5;
+  background-color: #f0fdff;
+}
 
 .Text {
   font-size: 1.2vh;

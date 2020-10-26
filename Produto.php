@@ -132,11 +132,7 @@
         <div class="col-10 offset-1 Menu_base mt-2">
           <h2 class="Line">Produto</h2>
             <?php
-<<<<<<< HEAD
-              $Product= ListarProdutos("Product",$_GET['id']);
-=======
               $Product=ListarProdutos("Product",$_GET['id'],null,null);
->>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
               while ($p=$Product->fetch_array()) {
                 $fotos=ListarFotos($p['cd_produto']);
                 $f=$fotos->fetch_array();
