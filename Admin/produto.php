@@ -18,6 +18,11 @@ h2{
   font-weight:bold;
 }
 
+.testandoAgain{
+  margin-left:30px;
+}
+
+
 </style>
 
 <body style="background-color: #ecf0f1">
@@ -70,8 +75,8 @@ h2{
 	  <?php 
 	  	$categorias=ListarCategorias();
         while($c=$categorias->fetch_array()){
-        echo '<input type="checkbox" name="categoria" class="form-check-input form-control btn-block" id="C'.$c['cd_categoria'].'" value="'.$c['cd_categoria'].'">   
-        <label class="form-control-lg " for="C'.$c['cd_categoria'].'">'.$c['nm_categoria'].'</label><br>';
+        echo '<div class="row testandoAgain"><div class="col-4 offset-2>"><input type="checkbox" name="categoria" class="form-check-input form-control" id="C'.$c['cd_categoria'].'" value="'.$c['cd_categoria'].'"></div> 
+       <div class="col-6"><label  class="form-control-lg " for="C'.$c['cd_categoria'].'">'.$c['nm_categoria'].'</label></div></div><br>';
       }
     ?>
   </div>  
