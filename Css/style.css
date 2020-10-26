@@ -67,7 +67,7 @@ h6 {
   border-radius: 5px;
   margin-left: 23%;
   width: 50%;
-  height: 3.5vh;
+  height: auto;
 }
 .Search_Button {
   color: #5e92ad;
@@ -76,7 +76,9 @@ h6 {
   margin-left: 1%;
   border-style: solid;
   border-radius: 5px;
-  height: 5vh;
+  height: auto;
+  transition-property: color, background-color;
+  transition-duration: .2s;
 }
 .Search_Button:hover {
   color: white;
@@ -96,8 +98,21 @@ h6 {
 
 /*Display For Phone*/
 @media only screen and (min-width: 0px) and (max-width: 785px) {
+<<<<<<< HEAD
   .Login_Part {
     margin-left: 14vw;
+=======
+  .Page{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 5%;
+    max-width: 79%;
+    text-align: center;
+  }
+.Login_Part{
+    margin-left:14vw;
+>>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
   }
   .Responsive_pic {
     max-width: 16vw;
@@ -127,8 +142,8 @@ h6 {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 2%;
-    margin-left: 5%;
-    max-width: 79%;
+    margin-left: 7.75%;
+    max-width: 85%;
     text-align: center;
   }
 
@@ -137,11 +152,10 @@ h6 {
     display: inline-block;
     margin-top: 2%;
     margin-bottom: 5px;
-    margin-right: 2vw;
-    margin-left: 1vw;
-    max-width: 20vw;
+    margin-right: 1vw;
+    margin-left: 3vw;
+    max-width: 16vw;
     max-height: 24vh;
-    max-width: 20%;
   }
   .Itens_Base {
     border-style: solid;
@@ -200,8 +214,21 @@ h6 {
 /*Display For Pc*/
 
 @media only screen and (min-width: 786px) {
+<<<<<<< HEAD
   .Login_Part {
     margin-left: 5vw;
+=======
+  .Page{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 11%;
+    text-align: center;
+  }
+  
+  .Login_Part{
+    margin-left:5vw;
+>>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
   }
   .Responsive_pic {
     max-width: 10vw;
@@ -305,6 +332,23 @@ h6 {
     height: 30vh;
   }
 }
+.PageButtons{
+    border-style: solid;
+    border-color: #39a7b5;
+    color:#F0FDFF;
+    background-color: #39a7b5;
+    border-radius: 5px;
+    margin-left:5px;
+    text-align: center;
+    transition-property: color, background-color;
+    transition-duration: .2s;
+  }
+  .PageButtons:hover{
+    border-color: #39a7b5;
+    color:#39a7b5;
+    background-color: #F0FDFF;
+  }
+
 .Text {
   font-size: 1.2vh;
   text-align: left;

@@ -132,7 +132,11 @@
         <div class="col-10 offset-1 Menu_base mt-2">
           <h2 class="Line">Produto</h2>
             <?php
+<<<<<<< HEAD
               $Product= ListarProdutos("Product",$_GET['id']);
+=======
+              $Product=ListarProdutos("Product",$_GET['id'],null,null);
+>>>>>>> 8f6ef947a922a7b37d37e0192139c68131c3ac33
               while ($p=$Product->fetch_array()) {
                 $fotos=ListarFotos($p['cd_produto']);
                 $f=$fotos->fetch_array();
@@ -144,7 +148,7 @@
             ?>
                 <div class="Product">
                   <?php
-                    $Product=ListarProdutos("Product",$_GET['id']);
+                    $Product=ListarProdutos("Product",$_GET['id'],null,null);
                     while($p=$Product->fetch_array()){
                       echo '<div class="Product_Info"><br>
                       <strong>Produto:</strong>'.$p['nm_produto'].'<br>
@@ -154,7 +158,7 @@
                       <strong>Data de Entrada:</strong> '.$p['entrada_produto'].'<br>
                       <strong>Descrição:</strong>'.$p['ds_produto'].'</div>
                       <div class="Product_Buy"><br>
-                        <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn"><br> 
+                        <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn" min="0" max="'.$p['qt_produto'].'"><br> 
                         <strong>Custo Total :</strong> 00.00 R$<br> 
                         <input type="Button" class="mt-2 mb-2 Buy" name="Aderir" value="Aderir">
                       </div>';
