@@ -30,7 +30,7 @@ h2{
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 title_Bar"><a href="../stock.php"><font color=white>Ideal Stock</font></a></div>
-<div class="col-10 Tool_Bar"><a href="categoria.php"><font color=white>Add Categoria</font></a>-<a href="produto.php"><font color=white>Add Produto</font></a></div>
+<div class="col-10 Tool_Bar"><a href="Admin/categoria.php"><font color=white>Add Categoria</font></a>-<a href="Admin/produto.php"><font color=white>Add Produto</font></a>-<a href="./relatorio.php"><font color=white>Visualizar Relatório</font></a></div>
 </div>
 	<div class="col-4 offset-4">
 		<h2>Crud de Produtos</h2>
