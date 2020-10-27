@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="Css/bootstrap.min.css">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-
 </head>
 <body style="background-color:#F0FDFF;">
     <div class="container-fluid">
@@ -71,7 +70,6 @@
             <a href="https://www.instagram.com/idealstock2020/" class="social-icons"><i class="fa fa-instagram"></i></a>
             <a href="https://twitter.com/stock_ideal" class="social-icons"><i class="fa fa-twitter"></i></a>
             <a href="https://idealstock2020@gmail.com" class="social-icons"><i class="fa fa-envelope"></i></a>
-            
         </div>
         </footer>
       </div>
