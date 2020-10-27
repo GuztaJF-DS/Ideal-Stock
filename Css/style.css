@@ -78,7 +78,7 @@ h6 {
   border-radius: 5px;
   height: auto;
   transition-property: color, background-color;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 .Search_Button:hover {
   color: white;
@@ -92,13 +92,16 @@ h6 {
 .Buy {
   margin-left: 40%;
 }
-.Account_Part{  
-    margin-left:12%;
-  }
+.Account_Part {
+  margin-left: 12%;
+}
 
 /*Display For Phone*/
 @media only screen and (min-width: 0px) and (max-width: 785px) {
-  .Page{
+  .Login_Part {
+    margin-left: 14vw;
+  }
+  .Page {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 2%;
@@ -106,8 +109,8 @@ h6 {
     max-width: 79%;
     text-align: center;
   }
-.Login_Part{
-    margin-left:14vw;
+  .Login_Part {
+    margin-left: 14vw;
   }
   .Responsive_pic {
     max-width: 16vw;
@@ -209,16 +212,19 @@ h6 {
 /*Display For Pc*/
 
 @media only screen and (min-width: 786px) {
-  .Page{
+  .Login_Part {
+    margin-left: 5vw;
+  }
+  .Page {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 2%;
     margin-left: 11%;
     text-align: center;
   }
-  
-  .Login_Part{
-    margin-left:5vw;
+
+  .Login_Part {
+    margin-left: 5vw;
   }
   .Responsive_pic {
     max-width: 10vw;
@@ -322,26 +328,26 @@ h6 {
     height: 30vh;
   }
 }
-.PageButtons{
-    border-style: solid;
-    border-color: #39a7b5;
-    color:#F0FDFF;
-    background-color: #39a7b5;
-    border-radius: 5px;
-    margin-left:5px;
-    text-align: center;
-    transition-property: color, background-color;
-    transition-duration: .2s;
-  }
-  .PageButtons:hover{
-    border-color: #39a7b5;
-    color:#39a7b5;
-    background-color: #F0FDFF;
-  }
+.PageButtons {
+  border-style: solid;
+  border-color: #39a7b5;
+  color: #f0fdff;
+  background-color: #39a7b5;
+  border-radius: 5px;
+  margin-left: 5px;
+  text-align: center;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+}
+.PageButtons:hover {
+  border-color: #39a7b5;
+  color: #39a7b5;
+  background-color: #f0fdff;
+}
 
 .Text {
   font-size: 1.2vh;
-  text-align:left;
+  text-align: left;
   visibility: hidden;
   position: absolute;
   padding: 10px;
@@ -375,16 +381,16 @@ h6 {
   box-shadow: 0px 0px 4px 0px rgb(209, 196, 179);
 }
 
-#btn,
+#Login,
 #btnUp {
-  border-radius: 23px;
+  border-radius: 50px;
   color: rgb(201, 233, 222);
   font-family: 'Open Sans';
   font-weight: bold;
   margin-top: 2px;
 }
 
-#btn:hover {
+#Login:hover {
   border: 2px solid white;
   background-color: #304b78;
 }
@@ -434,3 +440,113 @@ h6 {
   text-shadow: 0px 0px 1px black;
   list-style-type: circle;
 }
+
+#Login {
+  border-radius: 5px;
+}
+
+.myFooter{
+    padding-top:32px;
+}
+
+.myFooter .container{
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: 'Open Sans';
+    text-shadow: 0px 0px 1px rgb(35, 137, 221);
+}
+
+.myFooter .footer-copyright{
+    margin-bottom: 35px;
+    text-align: center;
+   color:rgb(20, 20, 22);
+}
+
+.myFooter ul{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+.myFooter a{
+    color: #282b2d;
+    font-size: 18px;
+}
+
+.myFooter li{
+    display: inline-block;
+    margin: 0px 15px;
+    line-height: 2;
+}
+
+.myFooter .footer-social{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color:rgb(183, 236, 236);
+    border-radius:20px;
+}
+
+.myFooter .fa{
+    font-size: 36px;
+    margin-right: 15px;
+    margin-left: 20px;
+    background-color: white;
+    color: #d0d0d0;
+    border-radius: 51%;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 43px;
+    text-decoration: none;
+    transition:color 0.2s;
+}
+
+.myFooter .fal{
+  color:yellow;
+}
+.myFooter .fa-facebook:hover{
+   color: #2b55ff;
+}
+
+.myFooter .fa-facebook:focus{
+    color: #2b55ff; 
+}
+
+.myFooter .fa-instagram:hover{
+    color:purple;
+}
+
+.myFooter .fa-instagram:focus{
+    color:purple;
+}
+.myFooter .fa-youtube:hover{
+    color:red;
+}
+
+.myFooter .fa-youtube:focus{
+    color:red;
+}
+
+.myFooter .fa-twitter:hover{
+    color: #00aced;
+
+}
+
+.myFooter .fa-twitter:focus{
+    color:#00aced;
+}
+
+.myFooter .fa-envelope:hover{
+    color: red;
+
+}
+
+.myFooter .fa-envelope:focus{
+    color:red;
+}
+
+
+

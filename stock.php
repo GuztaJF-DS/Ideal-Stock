@@ -8,12 +8,13 @@
     <script src="Js/script.js"></script>
     <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
   <body style="background-color: #F0FDFF">
     <div class="container-fluid">
       <div class="row">
           <div class="col-12 title_Bar"><a href="stock.php"><font color=white>Ideal Stock</font></a></div>
-          <div class="col-10 Tool_Bar"><a href="Admin/categoria.php"><font color=white>Add Categoria</font></a>-<a href="Admin/produto.php"><font color=white>Add Produto</font></a></div>
+          <div class="col-10 Tool_Bar"><a href="Admin/categoria.php"><font color=white>Add Categoria</font></a>-<a href="Admin/produto.php"><font color=white>Add Produto</font></a>-<a href="./relatorio.php"><font color=white>Visualizar Relatório</font></a></div>
         </div>
       <div class="row mt-4">
         <div class="col-10 offset-1 Menu_base mt-2">
@@ -67,6 +68,7 @@
         </div>
       </div>
       </div>
+
       <div class="col-10 offset-1 Page mt-2">
       <?php
         $P=ListarProdutos("Total",null,$Page,$NItens);
@@ -79,7 +81,26 @@
       ?>
       </div>
       <div class="row">
-        <div class="col-12 Footer">Propriety of Jf Enterprizes</div>
+      <div class="col-12">
+        <footer class="myFooter">
+        <div class="footer-social">
+        <div class="container">
+            <ul>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="https://idealstock2020@gmail.com">Contato</a></li>
+                <li><a href="./account.php">Criar Conta</a></li>
+                <i class="fal fa-map-marker-smile"></i><li><a href="https://goo.gl/maps/f9SboLsksrN2dzbVA" class="social-icons">Localização</a></li>
+              <p class="footer-copyright">© 2020 Copyright - IdealStock</p>
+            <a href="https://www.facebook.com/ideal.stock79/" class="social-icons"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/idealstock2020/" class="social-icons"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/stock_ideal" class="social-icons"><i class="fa fa-twitter"></i></a>
+            <a href="https://idealstock2020@gmail.com" class="social-icons"><i class="fa fa-envelope"></i></a>
+            
+        </div>
+        </footer>
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   </body>

@@ -61,42 +61,47 @@
 
     function CadastrarProduto($nmProduto, $ds_produto, $marca, $valor, $dt_validade, $quantidade,$qt_entrada,$qt_saida,$dt_entrada,$dt_saida, $peso, $largura, $comprimento, $altura, $data_atualização,$categorias)
     {
-        $sql = 'INSERT INTO tb_produto VALUES (null,"'.$nmProduto.'","'.$ds_produto.'","'.$marca.'",'.$valor.','.$dt_validade.','.$quantidade.','.$qt_entrada.','.$qt_saida.','.$dt_entrada.','.$dt_saida.','.$peso.','.$largura.','.$comprimento.','.$altura.',"'.$data_atualização.'")';
+        $sql = 'INSERT INTO tb_produto VALUES (null,"'.$nmProduto.'","'.$ds_produto.'","'.$marca.'",'.$valor.',"'.$dt_validade.'",'.$quantidade.','.$qt_entrada.',"'.$qt_saida.'","'.$dt_entrada.'","'.$dt_saida.'",'.$peso.','.$largura.','.$comprimento.','.$altura.',"'.$data_atualização.'")';
         $res = $GLOBALS['conexao']->query($sql);
         if($res)
         {
             $id = $GLOBALS['conexao']->insert_id;
             CadastrarProdutoCategoria($id,$categorias);
-            alert("Produto cadastrado com sucesso");
         }
         else
         {
-            alert("Erro ao cadastrar produto!" + $sql);
+            alert("Erro ao cadastrar produto!");
         }
     }
 
     function CadastrarProdutoCategoria($id_produto,$categorias){
-        $total = sizeof($categorias);
-        $sql = 'INSERT INTO tb_categoria_produto VALUES ';
-        for($i = 0 ;$i<$total;$i++){
-            $sql .= '('.$categorias[$i].','.$id_produto.'),';
+        $total=sizeof($categorias);
+        $sql='INSERT INTO tb_categoria_produto VALUES';
+        for($i=0;$i<$total;$i++){
+            $sql.='('.$categorias[$i].','.$id_produto.'),';
         }
-        //tirar -1 posicao
-        $sql = substr($sql,0,-1);
-        $sql .= ';';
-        $res= $GLOBALS['conexao']->query($sql);
+        $sql=substr($sql,0,-1);
+        $sql.=";";
+        $res=$GLOBALS['conexao']->query($sql);
         if($res){
-            alert("Produto cadastrado com sucesso");
+            alert("Produto Cadastrado com Sucesso");
         }else{
-            alert("Erro ao cadastrar produto nas categorias");
+            alert("Erro ao cadastrar Produto nas categorias ".$GLOBALS['conexao']->error);
         }
     }
 
-    function ListaCategoriaProduto(){
-        $sql = 'SELECT * from tb_produto pro INNER JOIN tb_categoria_produto cp on(pro.cd_produto = cp.id_produto)  INNER JOIN tb_categoria t 
-        on(t.cd_categoria = cp.id_categoria);';
+    function ListaCategoriaProduto($cd_produto){
+        $sql = 'SELECT t.nm_categoria from tb_categoria_produto cp  
+        INNER JOIN tb_categoria t on(t.cd_categoria = cp.id_categoria)
+        WHERE cp.id_produto='.$cd_produto.';';
         $res= $GLOBALS['conexao']->query($sql);
-        return $res;
+        if($res){
+        foreach($res as $value){
+            $a=implode($value);
+            print_r($a);
+            echo ' ';
+        }
+    }
     }
 
     function ListarProdutos($type,$id,$I1,$I2)

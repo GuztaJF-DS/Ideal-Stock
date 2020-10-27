@@ -18,6 +18,11 @@ h2{
   font-weight:bold;
 }
 
+.testandoAgain{
+  margin-left:30px;
+}
+
+
 </style>
 
 <body style="background-color: #ecf0f1">
@@ -25,7 +30,7 @@ h2{
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 title_Bar"><a href="../stock.php"><font color=white>Ideal Stock</font></a></div>
-<div class="col-10 Tool_Bar"><a href="categoria.php"><font color=white>Add Categoria</font></a>-<a href="produto.php"><font color=white>Add Produto</font></a></div>
+<div class="col-10 Tool_Bar"><a href="categoria.php"><font color=white>Add Categoria</font></a>-<a href="produto.php"><font color=white>Add Produto</font></a>-<a href="./relatorio.php"><font color=white>Visualizar Relatório</font></a></div>
 </div>
 	<div class="col-4 offset-4">
 		<h2>Crud de Produtos</h2>
@@ -70,8 +75,8 @@ h2{
 	  <?php 
 	  	$categorias=ListarCategorias();
         while($c=$categorias->fetch_array()){
-        echo '<input type="checkbox" name="categoria" class="form-check-input form-control btn-block" id="C'.$c['cd_categoria'].'" value="'.$c['cd_categoria'].'">   
-        <label class="form-control-lg " for="C'.$c['cd_categoria'].'">'.$c['nm_categoria'].'</label><br>';
+        echo '<div class="row testandoAgain"><div class="col-4 offset-2>"><input type="checkbox" name="categoria[]" class="form-check-input form-control" id="C'.$c['cd_categoria'].'" value="'.$c['cd_categoria'].'"></div> 
+       <div class="col-6"><label  class="form-control-lg " for="C'.$c['cd_categoria'].'">'.$c['nm_categoria'].'</label></div></div><br>';
       }
     ?>
   </div>  
@@ -108,7 +113,7 @@ if(isset($_GET['excluir'])){
   DeletarProduto($_GET['excluir']);
 }
 
-$produto = ListarProdutos(null,null);
+$produto = ListarProdutos(null,null,null,null);
   echo '<table class="table table-striped table tablel-hover table table-bordered table table-sm>
         <thead  class="thead-dark">
         <tr>
@@ -157,10 +162,9 @@ $produto = ListarProdutos(null,null);
         <td>'.$p['altura_produto'].'</td>
         <td>'.$p['dt_atualizacao'].'</td>';
         
-        $produ = ListaCategoriaProduto();
-        while($pr = $produ->fetch_array()){
-          echo '<td>'.$pr['nm_categoria'].'</td>';
-        }
+          echo '<td>';
+            ListaCategoriaProduto($p['cd_produto']);
+          echo  '</td>';
         echo '
       </tbody>';
   }
