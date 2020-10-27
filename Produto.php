@@ -1,4 +1,6 @@
-<?php include('./Admin/conexao.php');?>
+<?php include('./Admin/conexao.php');
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -38,16 +40,33 @@
                     $Product=ListarProdutos("Product",$_GET['id'],null,null);
                     while($p=$Product->fetch_array()){
                       echo '<div class="Product_Info"><br>
-                      <strong>Produto:</strong>'.$p['nm_produto'].'<br>
+                      <input type="hidden" id="id" valor="'.$p['cd_produto'].'">
+                      <strong>Produto:</strong><a id="pro" valor="'.$p['vl_produto'].'">'.$p['nm_produto'].'</a><br>
                       <strong>Preço:</strong> '.$p['vl_produto'].' R$<br>
                       <strong>Quantidade diponivel:</strong>'.$p['qt_produto'].'<br>
                       <strong>Marca:</strong> '.$p['marca_produto'].'<br>
-                      <strong>Data de Entrada:</strong> '.$p['entrada_produto'].'<br>
+                      <strong>Data de Entrada:</strong> '.$p['dt_entrada_produto'].'<br>
+                      <strong>Data de Saida:</strong> '.$p['dt_saida_produto'].'<br>
+                      <strong>Data de Atualização:</strong> '.$p['dt_atualizacao'].'<br>                      
                       <strong>Descrição:</strong>'.$p['ds_produto'].'</div>
                       <div class="Product_Buy"><br>
-                        <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn" min="0" max="'.$p['qt_produto'].'"><br> 
-                        <strong>Custo Total :</strong> 00.00 R$<br> 
-                        <input type="Button" class="mt-2 mb-2 Buy" name="Aderir" value="Aderir">
+                        <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn" min="0" max="99999999" value="';
+                        if(isset($_COOKIE['quant'][$p['cd_produto']])){
+                           echo $_COOKIE['quant'][$p['cd_produto']]; 
+                        }else{
+                           echo $p['qt_produto'];
+                        }
+                      
+                        echo '"><br> 
+                        <strong>Custo Total :</strong><span id="total">';
+                        if(isset($_COOKIE['total'][$p['cd_produto']])){
+                           echo $_COOKIE['total'][$p['cd_produto']].' R$'; 
+                        }else{
+                          $a = $p['vl_produto']*$p['qt_produto'];
+                          echo $a." R$";
+                        }
+                        echo '</span><br> 
+                        <input type="Button" class="mt-2 mb-2 Buy" name="Atualizar" value="Atualizar">
                       </div>';
                       }
 
@@ -79,3 +98,18 @@
     </div>
 </body>
 </html>
+
+<script> 
+  $(document).on('change','.qtn',function(){
+     var z=$('#pro').attr('valor');
+     var y=$(this).val();
+     var x=y*z;
+     var id=$('#id').attr('valor');
+     $('#total').html(x+' R$');
+     var d = new Date();
+     d.setTime(d.getTime() + (30*24*60*60*1000));
+     var expires = "expires="+ d.toUTCString();
+     document.cookie = "total["+id+"]="+x+";"+expires+ ";";
+     document.cookie = "quant["+id+"]="+y+";"+expires+ ";";     
+   });
+   </script>
