@@ -171,6 +171,25 @@ function ListarFotos($id_produto){
     return $res;
 }
 
+function ExcluirFoto($id_foto,$nm_foto){
+	$sql= 'DELETE FROM tb_foto WHERE cd_foto = '.$id_foto;
+	$sql2= 'SELECT nm_foto FROM tb_foto WHERE cd_foto = '.$id_foto;
+	$res = $GLOBALS['conexao']->query($sql); 
+	$res2 = $GLOBALS['conexao']->query($sql2); 
+	if($res){
+		alert("Foto excluida do banco");
+	}else{
+		alert("Foto não excluida do banco:".$GLOBALS['conexao']->error);
+	}if($res2){
+        if(file_exists('../'.$nm_foto) && is_file('../'.$nm_foto)){
+            unlink('../'.$nm_foto);
+        }
+     echo getcwd();   
+	}else{
+		alert("Foto não excluida dos arquivos");
+	}
+}
+
 
     //usuario 
 

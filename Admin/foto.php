@@ -19,8 +19,6 @@ h2{
 }
 </style>
 
-
-
 <body style="background-color: #ecf0f1">
 <div class="container-fluid">
     <div class="row">
@@ -44,6 +42,7 @@ h2{
 </body>
 </html>
 <?php
+
 if(isset($_GET['foto'])){
     if($_POST){
         $foto='Image/Produto/'.$_POST['id_produto'].$_FILES['foto']['name'];
@@ -56,6 +55,9 @@ if(isset($_GET['foto'])){
         }
     }
   }
+
+  $fotos=ListarFotos($_GET['foto']);
+  $busca = $teste=$fotos->fetch_array();
 
 echo'
 <br>
@@ -73,7 +75,7 @@ echo'
                 </thead>
                 <tbody>
 '; 
-$fotos=ListarFotos($_GET['foto']);
+
       while($f=$fotos->fetch_array()){
       echo'<tr>              
       <th scope="row">'.$f['cd_foto'].'</th>
@@ -84,4 +86,11 @@ $fotos=ListarFotos($_GET['foto']);
         </td>
       <tr>';
 }
+
+if(isset($_GET['excluir'])){
+  ExcluirFoto($_GET['excluir'],$busca['nm_foto']);
+}
+
+
+
 ?>
