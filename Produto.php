@@ -25,7 +25,7 @@ session_start();
         <div class="col-10 offset-1 Menu_base mt-2">
           <h2 class="Line">Produto</h2>
             <?php
-              $Product=ListarProdutos("Product",$_GET['id'],null,null);
+              $Product=ListarProdutos("Product",$_GET['id'],null,null,null);
               while ($p=$Product->fetch_array()) {
                 $fotos=ListarFotos($p['cd_produto']);
                 $f=$fotos->fetch_array();
@@ -37,20 +37,25 @@ session_start();
             ?>
                 <div class="Product">
                   <?php
-                    $Product=ListarProdutos("Product",$_GET['id'],null,null);
+                    $Product=ListarProdutos("Product",$_GET['id'],null,null,null);
                     while($p=$Product->fetch_array()){
                       echo '<div class="Product_Info"><br>
                       <input type="hidden" id="id" valor="'.$p['cd_produto'].'">
                       <strong>Produto:</strong><a id="pro" valor="'.$p['vl_produto'].'">'.$p['nm_produto'].'</a><br>
                       <strong>Preço:</strong> '.$p['vl_produto'].' R$<br>
                       <strong>Quantidade diponivel:</strong>'.$p['qt_produto'].'<br>
-                      <strong>Marca:</strong> '.$p['marca_produto'].'<br>
-                      <strong>Data de Entrada:</strong> '.$p['dt_entrada_produto'].'<br>
-                      <strong>Data de Saida:</strong> '.$p['dt_saida_produto'].'<br>
-                      <strong>Data de Atualização:</strong> '.$p['dt_atualizacao'].'<br>                      
+                      <strong>Marca:</strong> '.$p['marca_produto'].'<br>';
+                      if($p['dt_entrada_produto']!='0000-00-00'){                        
+                        echo '<strong>Data de Entrada:</strong> '.$p['dt_entrada_produto'].'<br>';
+                      }
+                      if($p['dt_saida_produto']!='0000-00-00'){ 
+                      echo '<strong>Data de Saida:</strong> '.$p['dt_saida_produto'].'<br>';
+                      }
+                      echo'<strong>Data de Atualização:</strong> '.$p['dt_atualizacao'].'<br>                      
                       <strong>Descrição:</strong>'.$p['ds_produto'].'</div>
                       <div class="Product_Buy"><br>
                         <strong>Quantidade: </strong><input type="number" class="qtn" name="qtn" min="0" max="99999999" value="';
+
                         if(isset($_COOKIE['quant'][$p['cd_produto']])){
                            echo $_COOKIE['quant'][$p['cd_produto']]; 
                         }else{
@@ -59,6 +64,7 @@ session_start();
                       
                         echo '"><br> 
                         <strong>Custo Total :</strong><span id="total">';
+
                         if(isset($_COOKIE['total'][$p['cd_produto']])){
                            echo $_COOKIE['total'][$p['cd_produto']].' R$'; 
                         }else{
@@ -66,7 +72,10 @@ session_start();
                           echo $a." R$";
                         }
                         echo '</span><br> 
-                        <input type="Button" class="mt-2 mb-2 Buy" name="Atualizar" value="Atualizar">
+                        <form action="Produto.php?id='.$p['cd_produto'].'" method="POST">
+                        <input type="hidden" name="qtd" value="'.$p['qt_produto'].'">
+                        <input type="submit" class="mt-2 mb-2 Buy" name="Atualizar" value="Atualizar" >
+                        </form>
                       </div>';
                       }
 
@@ -98,7 +107,26 @@ session_start();
     </div>
 </body>
 </html>
+<?php
+if($_POST){
+  $id=$_GET['id'];
+  $QtdOld=$_POST['qtd'];
+  $QtdNew=$_COOKIE['quant'][$id];
+  date_default_timezone_set('America/Sao_Paulo');
+  $agora = new DateTime();
+  $NewDate = $agora->format('Y-m-d');
 
+  if($QtdNew>$QtdOld){//att entrada
+    atualizarProduto("Enter",$id,$NewDate,$QtdNew);
+  }
+  else if($QtdNew<$QtdOld){//att saida
+    atualizarProduto("Exit",$id,$NewDate,$QtdNew);
+  }
+  else{
+    return;
+  }
+}
+?>
 <script> 
   $(document).on('change','.qtn',function(){
      var z=$('#pro').attr('valor');
@@ -112,4 +140,4 @@ session_start();
      document.cookie = "total["+id+"]="+x+";"+expires+ ";";
      document.cookie = "quant["+id+"]="+y+";"+expires+ ";";     
    });
-   </script>
+</script>  

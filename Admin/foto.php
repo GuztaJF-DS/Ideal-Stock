@@ -56,7 +56,6 @@ if(isset($_GET['foto'])){
         }
     }
   }
-
 echo'
 <br>
 <div class="container-fluid">
@@ -84,4 +83,10 @@ $fotos=ListarFotos($_GET['foto']);
         </td>
       <tr>';
 }
+$fotos2=ListarFotos($_GET['foto']);
+$f=$fotos2->fetch_array();
+if(isset($_GET['excluir'])){
+  ExcluirFoto($_GET['excluir'],$f['nm_foto']);
+}
 ?>
+

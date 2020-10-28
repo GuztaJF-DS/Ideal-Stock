@@ -50,14 +50,6 @@ h2{
 	<input type="date" class="form-control" name="dval"><br>
   <label for="qtd">Quantidade:</label><br>
 	<input type="number" class="form-control" name="qtd"></input><br>
-  <label for="qtent">Qtd de Entrada:</label><br>
-	<input type="number" class="form-control" name="qtent"><br>
-  <label for="qtsai">Qtd de Saida</label><br>
-	<input type="number" class="form-control" name="qtsai"></input><br>
-  <label for="dtent">Data de Entrada:</label><br>
-	<input type="date" class="form-control" name="dtent"><br>
-  <label for="dtsai">Data de Saida</label><br>
-	<input type="date" class="form-control" name="dtsai"></input><br>
   <label for="peso">Peso:</label><br>
 	<input type="number" class="form-control" name="peso"><br>
   <label for="largura">Largura:</label><br>
@@ -66,8 +58,6 @@ h2{
 	<input type="number" class="form-control" name="comp"><br>
   <label for="altura">Altura:</label><br>
 	<input type="number" class="form-control" name="altura"></input><br>
-  <label for="dtat">Data Atualização:</label><br>
-	<input type="date" class="form-control" name="datu"><br>
   <label for="categorias">Categorias:</label><br>
   <div class="row">
   <div class="col-4 offset">
@@ -96,24 +86,28 @@ if($_POST){
   $valor = $_POST['valor'];
   $Dval= $_POST['dval'];
   $Qtd = $_POST['qtd'];
-  $Qt_entrada = $_POST['qtent'];
-  $Qt_saida = $_POST['qtsai'];
-  $Dt_entrada = $_POST['dtent'];
-  $Dt_saida = $_POST['dtsai'];
+  $Qt_entrada = $Qtd;
+  $Qt_saida = "0";
+  date_default_timezone_set('America/Sao_Paulo');
+  $agora = new DateTime();
+  $Dt_entrada = $agora->format('Y/m/d');
+  $Dt_saida = "0000-00-00";
   $peso = $_POST['peso'];
   $largura = $_POST['largura'];
   $comprimento = $_POST['comp'];
   $Altura = $_POST['altura'];
-  $Datuali = $_POST['datu'];
+  $Datuali = $Dt_entrada;
   $categoria = $_POST['categoria'];
   CadastrarProduto($nome,$descricao,$marca,$valor,$Dval,$Qtd,$Qt_entrada,$Qt_saida,$Dt_entrada,$Dt_saida,$peso,$largura,$comprimento,$Altura,$Datuali,$categoria);
 }
 
 if(isset($_GET['excluir'])){
-  DeletarProduto($_GET['excluir']);
+  $foto=ListarFotos($_GET['excluir']);
+  $f=$foto->fetch_array();
+  DeletarProduto($_GET['excluir'],$f['nm_foto']);
 }
 
-$produto = ListarProdutos(null,null,null,null);
+$produto = ListarProdutos(null,null,null,null,null);
   echo '<table class="table table-striped table tablel-hover table table-bordered table table-sm>
         <thead  class="thead-dark">
         <tr>
