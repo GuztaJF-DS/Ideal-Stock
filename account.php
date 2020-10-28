@@ -25,7 +25,7 @@
     "
   >
     <div class="container-fluid">
-      <div class="row justify-content-left">
+      <div class="row justify-content-center">
         <div class="Account_Part">
           <div class="Itens_base">
             <form action="account.php" method="POST" class="form2">
